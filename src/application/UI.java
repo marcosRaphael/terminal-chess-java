@@ -16,7 +16,7 @@ public class UI {
 	public static final String ANSI_WHITE = "\u001B[37m";
 	public static final String ANSI_RESET = "\u001B[0m";
 	public static final String ANSI_BLACK = "\u001B[30m";
-	public static final String ANSI_RED = "\u001B[31m";
+//	public static final String ANSI_BLACK = "\u001B[31m";
 	
 	public static final String ANSI_BLUE_BACKGROUND = "\u001B[44m";
 	
@@ -57,7 +57,7 @@ public class UI {
 		System.out.println("Turn: " + chessMatch.getTurn());
 		
 		if(!chessMatch.getCheckMate()) {
-			System.out.println("Waiting player " + chessMatch.getCurrentPlayer());
+			System.out.println("Waiting player: " + chessMatch.getCurrentPlayer());
 			if(chessMatch.getCheck()) {
 				System.out.println("CHECK!");
 			}
@@ -89,10 +89,10 @@ public class UI {
 		else {
 			if(piece.getColor() == Color.WHITE)
 			{
-				System.out.print(ANSI_WHITE + piece + ANSI_RESET);
+				System.out.print( piece);
 			}
 			else {
-				System.out.print(ANSI_RED + piece + ANSI_RESET);
+				System.out.print(ANSI_BLACK + piece + ANSI_RESET);
 			}
 		}
 		
@@ -107,11 +107,11 @@ public class UI {
 		
 		System.out.println("Captured pieces: ");
 		System.out.print("White: ");
-		System.out.print(ANSI_WHITE);
+	
 		System.out.println(Arrays.toString(white.toArray()));
-		System.out.print(ANSI_RESET);
+	
 		System.out.print("Black: ");
-		System.out.print(ANSI_RED);
+		System.out.print(ANSI_BLACK);
 		System.out.println(Arrays.toString(black.toArray()));
 		System.out.print(ANSI_RESET);
 	}
